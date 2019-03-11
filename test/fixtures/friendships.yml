@@ -1,0 +1,14 @@
+one:
+  user_id: michael
+  friend_id: lana
+  transition: :pending
+
+two:
+  user_id: michael
+  friend_id: massi
+  transition: :accepted
+
+three:
+  user_id: super
+  friend_id: lana
+  transition: :accepted

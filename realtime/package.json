@@ -1,0 +1,9 @@
+{
+  "name": "RoR-real-time",
+  "description": "providing real-time sychronization for ruby on rails",
+  "version": "0.0.1",
+  "dependencies": {
+    "redis": "^2.6.3",
+    "socket.io": "^1.6.0"
+  }
+}

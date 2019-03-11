@@ -1,0 +1,70 @@
+<li>
+  <%= gravatar_for user, size: 50 %>
+  <%= link_to user.name, user %>
+  <div class="text-right">
+      <% unless current_user?(user) %>
+        <div id = "follow_form">
+          <% if !friends?(user) %> 
+            <% if !user.super_user? %>
+              <% if !user.following?(current_user) %>
+              
+                <%= form_for(current_user.friendships.build, remote:true) do |f| %>
+                  <div><%= hidden_field_tag :friend_id, user.id %></div>
+                  <%= f.submit "Add Friend", class: "btn btn-primary reduce" %>
+                <% end %>
+                
+              <% else %>
+                <p> Follower </p>
+              <% end %>
+              
+            <% else %>
+              <% if  !current_user.following?(user) %>
+                <%= form_for(current_user.active_relationships.build, remote:true) do |f| %>
+                  <div><%= hidden_field_tag :followed_id, user.id %></div>
+                  <%= f.submit "Follow", class: "btn btn-primary reduce" %>
+                <% end %>
+                
+              <% else  %>
+                <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),
+                html: { method: :delete }, remote: true) do |f| %>
+                  <%= f.submit "Unfollow", class: "btn reduce" %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <% if pending?(user)%>
+              <p>Pending Request</p>
+
+            <% elsif pending_friend?(user) %>
+              <%= form_for(user.friendships.find_by(friend_id: current_user.id),
+                         html: { method: :put }, remote: true) do |f| %>
+                <%= f.submit "Accept", class: "btn reduce" %>
+              <% end %>
+            
+            <% elsif accepted?(user) %>
+              
+              <%= form_for(current_user.friendships.find_by(friend_id: user.id),
+               html: { method: :delete }, remote: true) do |f| %>
+                <div><%= hidden_field_tag :user_id, current_user.id %></div>
+                <%= f.submit "Delete Friend", class: "btn reduce" %>
+              <% end %>
+              
+            <% else %>
+              
+              <%= form_for(user.friendships.find_by(friend_id: current_user.id),
+               html: { method: :delete }, remote: true) do |f| %>
+                <div><%= hidden_field_tag :user_id, user.id %></div>
+                <%= f.submit "Delete Friend", class: "btn reduce" %>
+              <% end %>
+            <% end %>
+          <% end %>
+              
+        </div>
+      <% end %>
+      <div class="clear"></div>
+  </div>
+  <% if current_user.admin? && !current_user?(user) %>
+    <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>

@@ -1,0 +1,109 @@
+|               User's Photos         |||
+| ------------- |:-------------|:-------------|
+|   GET |   https://rdc-snaptrack.c9users.io/api/photos   |
+|   Headers | Authorization : Bearer {Access Token} |
+Response:
+```
+{
+    "status" : "ok",
+    "photos" : [
+         {
+            "id":"17284",
+            "images":[
+                  {
+                   "height": 120,
+                   "source": "https://example/14_o.jpg",
+                   "width": 108
+                  },
+                  ...
+            ],
+            "place":{
+                  "place": {
+                  "id": "3749096",
+                  "location": {
+                       "city": "Rome",
+                       "country": "Italy",
+                       "latitude": 41.896546576646,
+                       "longitude": 12.510804429441,
+                       "street": "Piazza di Porta San Lorenzo",
+                       "zip": "00185"
+                  },
+             "name": "San Lorenzo - Roma"
+             }
+        },
+        ...
+       ]
+}
+```
+Bad Response:
+```
+{
+    "status" : "error"
+}
+```
+ 
+***
+ 
+|               User's Friends         ||
+| ------------- |:-------------|
+|   GET |   https://rdc-snaptrack.c9users.io/api/friends  |
+|   Headers | Authorization : Bearer {Access Token} |
+ 
+Response:
+```
+{
+    "status" : "ok",
+    "friends" : [
+        {
+             "id": "1627394",
+             "name": "Mario Rossi"
+        },
+                    ...
+    ]
+}
+```
+Bad Response:
+```
+{
+    "status" : "error"
+}
+```
+ 
+***
+ 
+|               User's places        ||
+| ------------- |:-------------|
+|   GET |   https://rdc-snaptrack.c9users.io/api/places  |
+|   Headers | Authorization : Bearer {Access Token} |
+ 
+Response:
+```
+{
+    "status" : "ok",
+    "places" : [
+         {
+              "created_time": "2016-05-28T15:39:02+0000",
+              "id": "10209282170434185",
+              "place": {
+                   "id": "115353315143936",
+                   "location": {
+                        "city": "Rome",
+                        "country": "Italy",
+                        "latitude": 41.9,
+                        "longitude": 12.5
+                   },
+                   "name": "Rome, Italy"
+              }
+         },
+         ...
+    ]
+}
+```
+Bad Response:
+```
+{
+    "status" : "error"
+}
+```
+ 
+***

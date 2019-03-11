@@ -1,0 +1,17 @@
+<% provide(:title, 'All Friends') %>
+<h1>Your Friends</h1>
+  <% if @friends.any? %>
+    <h3 id="showfrh3">(<%= pluralize(@friends.count ,"friend")%>)</h3>
+    <%= will_paginate @friends %>
+    <ul class="users">
+      <%= render @friends %>
+    </ul>
+    <%= will_paginate @friends %>
+  <% end %>
+
+
+
+
+
+
+

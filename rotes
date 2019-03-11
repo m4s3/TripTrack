@@ -1,0 +1,49 @@
+                          Prefix Verb     URI Pattern                             Controller#Action
+              OK      likes_create GET      /likes/create(.:format)                 likes#create
+          OK   password_resets_new GET      /password_resets/new(.:format)          password_resets#new
+         OK   password_resets_edit GET      /password_resets/edit(.:format)         password_resets#edit
+           OK                 root GET      /                                       static_pages#home
+             OK               help GET      /help(.:format)                         static_pages#help
+               OK             dize GET      /dize(.:format)                         static_pages#dize
+                 OK           diza GET      /diza(.:format)                         static_pages#diza
+                   OK         dizr GET      /dizr(.:format)                         static_pages#dizr
+                    OK       about GET      /about(.:format)                        static_pages#about
+                      OK    contact GET      /contact(.:format)                      static_pages#contact
+                         OK  signup GET      /signup(.:format)                       users#new
+                           OK      POST     /signup(.:format)                       users#create
+                        OK  users GET      /users(.:format)                        users#index
+                        OK   login GET      /login(.:format)                        sessions#new
+                          OK       POST     /login(.:format)                        sessions#create
+                       OK   logout DELETE   /logout(.:format)                       sessions#destroy
+           OK                      POST     /                                       microposts#create
+                Ok    following_user GET      /users/:id/following(.:format)          users#following
+              OK   followers_user GET      /users/:id/followers(.:format)          users#followers
+              OK      friends_user GET      /users/:id/friends(.:format)            users#friends
+         OK   request_friends_user GET      /users/:id/request_friends(.:format)    users#request_friends
+                           OK      GET      /users(.:format)                        users#index
+                          OK       POST     /users(.:format)                        users#create
+                   OK     new_user GET      /users/new(.:format)                    users#new
+                OK       edit_user GET      /users/:id/edit(.:format)               users#edit
+                   OK         user GET      /users/:id(.:format)                    users#show
+                    O K            PATCH    /users/:id(.:format)                    users#update
+                        OK         PUT      /users/:id(.:format)                    users#update
+                        OK        DELETE   /users/:id(.:format)                    users#destroy
+user_facebook_omniauth_authorize GET|POST /users/auth/facebook(.:format)   OK       users/omniauth_callbacks#passthru
+OK   user_facebook_omniauth_callback GET|POST /users/auth/facebook/callback(.:format) users/omniauth_callbacks#facebook
+       OK  edit_account_activation GET      /account_activations/:id/edit(.:format) account_activations#edit
+         OK        password_resets POST     /password_resets(.:format)              password_resets#create
+           OK   new_password_reset GET      /password_resets/new(.:format)          password_resets#new
+      OK       edit_password_reset GET      /password_resets/:id/edit(.:format)     password_resets#edit
+        OK          password_reset PATCH    /password_resets/:id(.:format)          password_resets#update
+          OK                       PUT      /password_resets/:id(.:format)          password_resets#update
+              OK   like_micropost GET      /microposts/:id/like(.:format)          microposts#like
+                OK      microposts POST     /microposts(.:format)                   microposts#create
+                  O K    micropost DELETE   /microposts/:id(.:format)               microposts#destroy
+                   relationships POST     /relationships(.:format)                relationships#create
+                  relationship DELETE   /relationships/:id(.:format)            relationships#destroy
+                  Ok  friendships POST     /friendships(.:format)                  friendships#create
+                   Ok   friendship PATCH    /friendships/:id(.:format)              friendships#update
+                       Ok         PUT      /friendships/:id(.:format)              friendships#update
+                         OK        DELETE   /friendships/:id(.:format)              friendships#destroy
+                  OK         likes POST     /likes(.:format)                        likes#create
+                  ok          like DELETE   /likes/:id(.:format)                    likes#destroy

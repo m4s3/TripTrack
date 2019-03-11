@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  user_id: michael
+  micropost_id: 1
+  lat: 1.5
+  lng: 1.5
+  name: MyString
+
+two:
+  user_id: archer
+  micropost_id: 2
+  lat: 1.5
+  lng: 1.5
+  name: MyString

@@ -1,0 +1,7 @@
+one:
+  picture: MyString1
+  place_id: Roma
+
+two:
+  picture: MyString2
+  place_id: Mila

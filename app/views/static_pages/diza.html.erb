@@ -1,0 +1,410 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<HEAD>
+  <STYLE>
+    TABLE {
+      FONT-FAMILY: ARIAL, SANS-SERIF;
+      BORDER-COLLAPSE: COLLAPSE;
+      WIDTH: 75%;
+    }
+    
+    TD,
+    TH {
+      BORDER: 1PX SOLID #DDDDDD;
+      TEXT-ALIGN: CENTER;
+      PADDING: 10PX;
+    }
+  </STYLE>
+</HEAD>
+
+<BODY>
+
+  <TABLE>
+    <TR>
+      <TH>ATTRIBUTES</TH>
+      <TH>ENTITY/REL.</TH>
+      <TH>DOMAIN</TH>
+      <TH>DESCRIPTION</TH>
+    </TR>
+    <TR>
+      <TD>ID</TD>
+      <TD>USER</TD>
+      <TD>INTEGER </TD>
+      <TD>PRIMARY KEY, NOT NULL FOR THE ENTITY USER</TD>
+    </TR>
+    <TR>
+      <TD>NAME</TD>
+      <TD>USER</TD>
+      <TD> VARCHAR </TD>
+      <TD>USER'S NAME NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>EMAIL</TD>
+      <TD>USER</TD>
+      <TD>VARCHAR </TD>
+      <TD>USER'S EMAIL</TD>
+    </TR>
+    <TR>
+      <TD>CREATED_AT</TD>
+      <TD>USER</TD>
+      <TD>DATETIME </TD>
+      <TD> TIME OF CREATION NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>UPDATED_AT</TD>
+      <TD>USER</TD>
+      <TD>DATETIME </TD>
+      <TD>TIME OF UPDATE NOT NULL</TD>
+    </TR>
+    <TR>
+      <TD>PASSWORD_DIGEST</TD>
+      <TD>USER</TD>
+      <TD>VARCHAR </TD>
+      <TD>DIGEST OF USER'S PASSWORD</TD>
+    </TR>
+    <TR>
+      <TD>REMEMBER_DIGEST</TD>
+      <TD>USER</TD>
+      <TD>VARCHAR </TD>
+      <TD>DIGEST OF USER'S REMEMBER_TOKEN</TD>
+    </TR>
+    <TR>
+      <TD>ACTIVATION_DIGEST</TD>
+      <TD>USER</TD>
+      <TD>VARCHAR </TD>
+      <TD>DIGEST OF USER'S ACTIVATION_TOKEN</TD>
+    </TR>
+    <TR>
+      <TD>ACTIVATED</TD>
+      <TD>USER</TD>
+      <TD>BOOLEAN</TD>
+      <TD>BOOLEAN TO VERIFY THAT THE USER'S ACCOUNT IS ACTIVATED</TD>
+    </TR>
+    <TR>
+      <TD>ACTIVATED_AT</TD>
+      <TD>USER</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF ACCOUNT ACTIVATION</TD>
+    </TR>
+    <TR>
+      <TD>RESET_DIGEST</TD>
+      <TD>USER</TD>
+      <TD>VARCHAR </TD>
+      <TD>DIGEST OF USER'S RESET_TOKEN</TD>
+    </TR>
+    <TR>
+      <TD>RESET_SENT_AT</TD>
+      <TD>USER</TD>
+      <TD>VARCHAR </TD>
+      <TD>SENDING TIME OF THE TOKEN RESET </TD>
+    </TR>
+    <TR>
+      <TD>PROVIDER</TD>
+      <TD>USER</TD>
+      <TD>VARCHAR </TD>
+      <TD>PROVIDER FOR EXTERNAL SERVICES (FACEBOOK OR NULL)</TD>
+    </TR>
+    <TR>
+      <TD>UID</TD>
+      <TD>USER</TD>
+      <TD>VARCHAR</TD>
+      <TD>USER ID FOR EXTERNAL SERVICES</TD>
+    </TR>
+    <TR>
+      <TD>FACEBOOK_DIGEST</TD>
+      <TD>USER</TD>
+      <TD>VARCHAR </TD>
+      <TD>DIGEST OF USER'S FACEBOOK_TOKEN</TD>
+    </TR>
+    <TR>
+      <TD>ADMIN</TD>
+      <TD>USER/ADMIN</TD>
+      <TD>BOOLEAN </TD>
+      <TD>BOOLEAN TO VERIFY THAT THE USER IS AN ADMIN</TD>
+    </TR>
+    <TR>
+      <TD>SUPERUSER</TD>
+      <TD>USER/SUPERUSER</TD>
+      <TD>BOOLEAN </TD>
+      <TD>BOOLEAN TO VERIFY THAT THE USER IS A SUPER USER </TD>
+    </TR>
+    <TR>
+      <TD>SUPERUSER</TD>
+      <TD>USER/SUPERUSER</TD>
+      <TD>BOOLEAN </TD>
+      <TD>BOOLEAN TO VERIFY THAT THE USER IS A SUPER USER </TD>
+    </TR>
+    <TR>
+      <TD>ID</TD>
+      <TD>POST</TD>
+      <TD>INTEGER</TD>
+      <TD>PRIMARY KEY NOT NULL FOR THE ENTITY POST </TD>
+    </TR>
+    <TR>
+      <TD>CONTENT</TD>
+      <TD>POST</TD>
+      <TD>TEXT</TD>
+      <TD>POST'S CONTENT</TD>
+    </TR>
+    <TR>
+      <TD>CREATED_AT</TD>
+      <TD>POST</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF CREATION NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>UPDATED_AT</TD>
+      <TD>POST</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF UPDATING NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>PICTURE</TD>
+      <TD>POST</TD>
+      <TD>VARCHAR</TD>
+      <TD>AMAZON'S URL TO VIEW THE PHOTOS </TD>
+    </TR>
+    <TR>
+      <TD>ID</TD>
+      <TD>PHOTO</TD>
+      <TD>INTEGER</TD>
+      <TD>PRIMARY KEY NOT NULL FOR THE ENTITY PHOTO </TD>
+    </TR>
+    <TR>
+      <TD>ID</TD>
+      <TD>PHOTO</TD>
+      <TD>INTEGER</TD>
+      <TD>PRIMARY KEY NOT NULL FOR THE ENTITY PHOTO </TD>
+    </TR>
+    <TR>
+      <TD>PICTURE</TD>
+      <TD>PHOTO</TD>
+      <TD>VARCHAR</TD>
+      <TD>FACEBOOK'S URL TO VIEW THE PHOTOS </TD>
+    </TR>
+    <TR>
+      <TD>CREATED_AT</TD>
+      <TD>PHOTO</TD>
+      <TD>VARCHAR</TD>
+      <TD>TIME OF CREATION  NOT NULL</TD>
+    </TR>
+    <TR>
+      <TD>UPDATED_AT</TD>
+      <TD>PHOTO</TD>
+      <TD>VARCHAR</TD>
+      <TD>TIME OF UPDATING NOT NULL</TD>
+    </TR>
+    <TR>
+      <TD>ID</TD>
+      <TD>PLACE</TD>
+      <TD>INTEGER</TD>
+      <TD>PRIMARY KEY NOT NULL FOR THE ENTITY PLACE</TD>
+    </TR>
+    <TR>
+      <TD>LATITUDE</TD>
+      <TD>PLACE</TD>
+      <TD>FLOAT </TD>
+      <TD>PLACE LATITUDE</TD>
+    </TR>
+    <TR>
+      <TD>LONGITUDE</TD>
+      <TD>PLACE</TD>
+      <TD>FLOAT</TD>
+      <TD>PLACE LONGITUDE</TD>
+    </TR>
+    <TR>
+      <TD>NAME</TD>
+      <TD>PLACE</TD>
+      <TD>VARCHAR</TD>
+      <TD>PLACE NAME </TD>
+    </TR>
+    <TR>
+      <TD>CREATED_AT</TD>
+      <TD>PLACE</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF CREATION NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>UPDATED_AT</TD>
+      <TD>PLACE</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF UPDATING NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>ID</TD>
+      <TD>FRIENDSHIP</TD>
+      <TD>INTEGER</TD>
+      <TD>PRIMARY KEY NOT NULL FOR THE RELATIONSHIP FRIENDSHIP</TD>
+    </TR>
+    <TR>
+      <TD>USER_ID</TD>
+      <TD>FRIENDSHIP</TD>
+      <TD>INTEGER</TD>
+      <TD>USER THAT SENT THE FRIEND REQUEST </TD>
+    </TR>
+    <TR>
+      <TD>FRIEND_ID</TD>
+      <TD>FRIENDSHIP</TD>
+      <TD>INTEGER</TD>
+      <TD>USER THAT RECEIVED THE FRIEND REQUEST </TD>
+    </TR>
+    <TR>
+      <TD>CREATED_AT</TD>
+      <TD>FRIENDSHIP</TD>
+      <TD>VARCHAR</TD>
+      <TD>TIME OF CREATION NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>UPDATED_AT</TD>
+      <TD>FRIENDSHIP</TD>
+      <TD>VARCHAR</TD>
+      <TD>TIME OF UPDATING  NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>TRANSITION</TD>
+      <TD>FRIENDSHIP</TD>
+      <TD>VARCHAR</TD>
+      <TD>CURRENT STATE OF FRIENDSHIP </TD>
+    </TR>
+    <TR>
+      <TD>ID</TD>
+      <TD>LIKE</TD>
+      <TD>INTEGER</TD>
+      <TD>PRIMARY KEY NOT NULL FOR THE RELATIONSHIP LIKE</TD>
+    </TR>
+    <TR>
+      <TD>USER_ID</TD>
+      <TD>LIKE</TD>
+      <TD>INTEGER</TD>
+      <TD> USER THAT LIKE THE POST</TD>
+    </TR>
+    <TR>
+      <TD>POST_ID</TD>
+      <TD>LIKE</TD>
+      <TD>INTEGER</TD>
+      <TD> POST THAT LIKED FROM USER</TD>
+    </TR>
+    <TR>
+      <TD>CREATED_AT</TD>
+      <TD>LIKE</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF CREATION NOT NULL</TD>
+    </TR>
+    <TR>
+      <TD>UPDATED_AT</TD>
+      <TD>LIKE</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF UPDATING NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>ID</TD>
+      <TD>FOLLOW</TD>
+      <TD>INTEGER</TD>
+      <TD>PRIMARY KEY NOT NULL FOR THE RELATIONSHIP FOLLOW</TD>
+    </TR>
+    <TR>
+      <TD>FOLLOWER_ID</TD>
+      <TD>FOLLOW</TD>
+      <TD>INTEGER</TD>
+      <TD>...</TD>
+    </TR>
+    <TR>
+      <TD>FOLLOWED_ID</TD>
+      <TD>FOLLOW</TD>
+      <TD>INTEGER</TD>
+      <TD>...</TD>
+    </TR>
+    <TR>
+      <TD>CREATED_AT</TD>
+      <TD>FOLLOW</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF CREATION NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>UPDATED_AT</TD>
+      <TD>FOLLOW</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF UPDATING NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>ID</TD>
+      <TD>CREATE</TD>
+      <TD>INTEGER</TD>
+      <TD>PRIMARY KEY NOT NULL FOR THE RELATIONSHIP FOLLOW</TD>
+    </TR>
+    <TR>
+      <TD>USER_ID</TD>
+      <TD>CREATE</TD>
+      <TD>INTEGER</TD>
+      <TD>...</TD>
+    </TR>
+    <TR>
+      <TD>PLACE_ID</TD>
+      <TD>CREATE</TD>
+      <TD>INTEGER</TD>
+      <TD>...</TD>
+    </TR>
+    <TR>
+      <TD>POST_ID</TD>
+      <TD>CREATE</TD>
+      <TD>INTEGER</TD>
+      <TD>...</TD>
+    </TR>
+    <TR>
+      <TD>CREATED_AT</TD>
+      <TD>CREATE</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF CREATION NOT NULL</TD>
+    </TR>
+    <TR>
+      <TD>UPDATED_AT</TD>
+      <TD>CREATE</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF UPDATING NOT NULL</TD>
+    </TR>
+    <TR>
+      <TD>ID</TD>
+      <TD>CREATE_FACEBOOK</TD>
+      <TD>INTEGER</TD>
+      <TD>PRIMARY KEY NOT NULL FOR THE RELATIONSHIP CREATE_FACEBOOK</TD>
+    </TR>
+    <TR>
+      <TD>USER_ID</TD>
+      <TD>CREATE_FACEBOOK</TD>
+      <TD>INTEGER</TD>
+      <TD>...</TD>
+    </TR>
+    <TR>
+      <TD>PLACE_ID</TD>
+      <TD>CREATE_FACEBOOK</TD>
+      <TD>INTEGER</TD>
+      <TD>...</TD>
+    </TR>
+    <TR>
+      <TD>PHOTO_ID</TD>
+      <TD>CREATE_FACEBOOK</TD>
+      <TD>INTEGER</TD>
+      <TD>...</TD>
+    </TR>
+    <TR>
+      <TD>CREATED_AT</TD>
+      <TD>CREATE_FACEBOOK</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF CREATION NOT NULL </TD>
+    </TR>
+    <TR>
+      <TD>UPDATED_AT</TD>
+      <TD>CREATE_FACEBOOK</TD>
+      <TD>DATETIME</TD>
+      <TD>TIME OF UPDATING NOT NULL NOT NULL </TD>
+    </TR>
+    
+    
+
+
+
+  </TABLE>
+</BODY>
+
+</HTML>

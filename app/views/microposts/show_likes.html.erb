@@ -1,0 +1,10 @@
+<% provide(:title, 'All Requests') %>
+<h1>Your Likes</h1>
+<% if @likers.any? %>
+  <div class="user_avatars">
+    <% @likers.each do |user| %>
+      <%= link_to gravatar_for(user, size: 30), user %>
+      <%= user.name %>
+    <% end %>
+  </div>
+<% end %>
